@@ -28,6 +28,11 @@ export const projectType = defineType({
       of: [{type: 'image'}],
     }),
     defineField({
+      name: 'softwares_used',
+      type: 'array',
+      of: [{type: 'image'}],
+    }),
+    defineField({
       name: 'short_description',
       type: 'string',
     }),

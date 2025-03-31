@@ -10,7 +10,7 @@ import { urlFor } from "@/sanity/image"
 const EVENTS_QUERY = defineQuery(`*[
     _type == "project"
     && defined(slug.current)
-  ]{_id, name, slug, details, short_description, image}|order(date desc)`)
+  ]{_id, name, slug, details, short_description, image, softwares_used, date}|order(date desc)`)
 
 export default async function ProjectGrid() {
     const { data: projects } = await sanityFetch({ query: EVENTS_QUERY });
@@ -27,6 +27,7 @@ export default async function ProjectGrid() {
                         description={project.short_description}
                         thumbnail={urlFor(project.image[0]).url()}
                         slug={project.slug} 
+                        softwares_used={project.softwares_used}
                         key={project._id}/>
                 ))}
             </div>

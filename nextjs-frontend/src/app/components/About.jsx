@@ -24,7 +24,7 @@ export default function About() {
                 </div>
             </div>
             <div className="w-1/3 drop-shadow-md m-4">
-                <img className="rounded-full" src="/max_cut.jpg" />
+                <img className="rounded-xl" src="/max_cut.jpg" />
             </div>
         </div>
     )

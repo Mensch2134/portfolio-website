@@ -9,21 +9,21 @@ export default function Navbar() {
         {/* Left Section: Profile */}
         <div className="flex items-center space-x-3">
           <Image
-            src="/pride.png"
+            src="/profile.png"
             alt="Profile"
-            width={64}
-            height={64}
-            className="rounded-full"
+            width={40}
+            height={40}
+            className="rounded-sm"
           />
           <span className="text-lg font-medium">Max Miehe</span>
         </div>
 
         {/* Right Section: Icons */}
         <div className="flex items-center space-x-4">
-          <Link href="https://github.com" target="_blank">
+          <Link href="https://github.com/Mensch2134" target="_blank">
             <Image src="/github.png" alt="GitHub" width={28} height={28} />
           </Link>
-          <Link href="https://linkedin.com" target="_blank">
+          <Link href="https://www.linkedin.com/in/max-miehe-dev" target="_blank">
             <Image src="/linkedin.png" alt="LinkedIn" width={32} height={32} />
           </Link>
         </div>

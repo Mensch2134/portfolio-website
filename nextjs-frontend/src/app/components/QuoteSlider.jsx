@@ -25,18 +25,26 @@ export default function QuoteSlider() {
         autoplay: true,
         autoplaySpeed: 8000,
         arrows: false,
+        adaptiveHeight: true,
     };
 
     return (
-        <div className={`bg-[#1a1a1a] rounded-sm my-15 p-8 px-25 [text-shadow:_1_2px_0px_rgba(205,102,136,1)]`}>
-            <Slider {...settings}>
-                {quotes.map((q, index) => (
-                    <div key={index} className="flex flex-col content-center border-l-3 pl-7 min-h-35">
-                        <p className="text-2xl font-bold">{q.quote}</p>
-                        <p>- {q.author}</p>
-                    </div>
-                ))}
-            </Slider>
+        <div className="min-h-[250px] my-10">
+            <div className="bg-[#1a1a1a] rounded-sm my-15 p-8 px-25 [text-shadow:_1_2px_0px_rgba(205,102,136,1)]">
+                <Slider {...settings}>
+                    {quotes.map((q, index) => (
+                        <div 
+                            key={index} 
+                            className="flex flex-col border-l-3 pl-5 py-5 h-full"
+                        >
+                            <div>
+                                <p className="text-2xl font-bold">{q.quote}</p>
+                                <p className="text-gray-300">- {q.author}</p>
+                            </div>
+                        </div>
+                    ))}
+                </Slider>
+            </div>
         </div>
-    )
+    );
 }
