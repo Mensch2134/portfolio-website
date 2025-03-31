@@ -7,16 +7,18 @@ export default function Navbar() {
     <nav className="bg-[#1a1a1a] text-white shadow-md">
       <div className="max-w-5xl mx-auto px-4 flex items-center justify-between p-3">
         {/* Left Section: Profile */}
-        <div className="flex items-center space-x-3">
-          <Image
-            src="/profile.png"
-            alt="Profile"
-            width={40}
-            height={40}
-            className="rounded-sm"
-          />
-          <span className="text-lg font-medium">Max Miehe</span>
-        </div>
+        <Link href="/" className="flex items-center space-x-3">
+          <div className="flex items-center space-x-3">
+            <Image
+              src="/profile.png"
+              alt="Profile"
+              width={40}
+              height={40}
+              className="rounded-sm"
+            />
+            <span className="text-lg font-medium">Max Miehe</span>
+          </div>
+        </Link>
 
         {/* Right Section: Icons */}
         <div className="flex items-center space-x-4">

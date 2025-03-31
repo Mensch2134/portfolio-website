@@ -28,6 +28,16 @@ export const projectType = defineType({
       of: [{type: 'image'}],
     }),
     defineField({
+      name: 'youtube_links',
+      type: 'array',
+      of: [{type: 'url'}],
+    }),
+    defineField({
+      name: 'title_images',
+      type: 'array',
+      of: [{type: 'image'}],
+    }),
+    defineField({
       name: 'softwares_used',
       type: 'array',
       of: [{type: 'image'}],
