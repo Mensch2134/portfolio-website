@@ -68,42 +68,40 @@ export default function ProjectClient({ project }) {
 
     return (
         <div className="container mx-auto p-12 bg-[#1d1b1d] rounded-sm">
-            <Slider {...settings} className="w-full">
-                {/* Image Slides */}
-                {data.title_images?.map((image, index) => (
-                    <div key={index} className="flex justify-center items-center h-[400px]">
-                        <Image
-                            src={urlFor(image)?.width(800).height(400).url() || ""}
-                            alt={data.name}
-                            width={800}
-                            height={400}
-                            className="rounded-lg"
-                        />
-                    </div>
-                ))}
-
-                {/* YouTube Video Slides */}
-                {data.youtube_links?.map((link, index) => {
-                    const videoId = extractYouTubeID(link);
-                    return videoId ? (
-                        <div key={`youtube-${index}`} className="flex justify-center items-center h-[400px]">
-                            <iframe
-                                className="rounded-lg w-[800px] h-[400px]"
-                                src={`https://www.youtube.com/embed/${videoId}`}
-                                title={`YouTube Video ${index + 1}`}
-                                frameBorder="0"
-                                allowFullScreen
-                            ></iframe>
-                        </div>
-                    ) : null;
-                })}
-            </Slider>
-
             <h1 className="text-4xl text-[#cd6688] font-semibold">{data.name}</h1>
             {data.date && (
                 <p className="text-gray-600 mb-5">{new Date(data.date).getFullYear()}</p>
             )}
             {data.details && <PortableText value={data.details} components={customComponents} />}
+
+            {/* Image Slides */}
+            {data.title_images?.map((image, index) => (
+                <div key={index} className="flex justify-center my-5 items-center h-[400px]">
+                    <Image
+                        src={urlFor(image)?.width(800).height(400).url() || ""}
+                        alt={data.name}
+                        width={800}
+                        height={400}
+                        className="rounded-lg"
+                    />
+                </div>
+            ))}
+
+            {/* YouTube Video Slides */}
+            {data.youtube_links?.map((link, index) => {
+                const videoId = extractYouTubeID(link);
+                return videoId ? (
+                    <div key={`youtube-${index}`} className="flex my-5 justify-center items-center h-[400px]">
+                        <iframe
+                            className="rounded-lg w-[800px] h-[400px]"
+                            src={`https://www.youtube.com/embed/${videoId}`}
+                            title={`YouTube Video ${index + 1}`}
+                            frameBorder="0"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+                ) : null;
+            })}
         </div>
     );
 }
